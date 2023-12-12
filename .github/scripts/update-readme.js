@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 // Get the GitHub username of the latest visitor
-const visitorUsername = process.env.GITHUB_ACTOR;
+const visitorUsername = process.env.GITHUB_ACTOR || 'Visitor';
 
 // Read the current README.md content
 let readmeContent = fs.readFileSync('README.md', 'utf-8');
