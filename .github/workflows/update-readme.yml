@@ -12,15 +12,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-
-      - name: Install Dependencies
-        run: npm install
+      - name: Set Visitor's Username
+        run: echo "VISITOR_USERNAME=${GITHUB_ACTOR}" >> $GITHUB_ENV
 
       - name: Update README
         run: node .github/scripts/update-readme.js
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
